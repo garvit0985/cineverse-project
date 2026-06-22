@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineVerse - Movie Reviews & Ratings</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>CineVerse</h1>
+        </div>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#">Movies</a>
+            <a href="#">Watchlist (<span id="watchlist-count">0</span>)</a>
+            <a href="#">Premium</a>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <h2>Discover Your Next Favorite Movie</h2>
+        <div class="search-container">
+            <input type="text" id="movie-search" placeholder="Search movies by title...">
+            <select id="genre-filter">
+                <option value="all">All Genres</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+                <option value="Action">Action</option>
+                <option value="Drama">Drama</option>
+            </select>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <section>
+            <div class="movie-detail-card">
+                <div class="movie-header-block">
+                    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=500" alt="Inception" class="movie-poster">
+                    <div class="movie-info">
+                        <h3 id="movie-title">Inception</h3>
+                        <span class="genre-tag" id="movie-genre">Sci-Fi</span>
+                        <p style="color: var(--text-muted); font-size: 15px; line-height: 1.5;">
+                            A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.
+                        </p>
+                        
+                        <div class="scores-container">
+                            <div class="score-box">
+                                <span>Critic Score</span>
+                                <strong>🍅 87%</strong>
+                            </div>
+                            <div class="score-box">
+                                <span>Audience Score</span>
+                                <strong>🍿 91%</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="actions-bar">
+                    <button class="btn btn-primary" id="watchlist-btn">Add to Watchlist</button>
+                    <button class="btn btn-secondary" onclick="alert('Stripe Integration: Directing to Tipping Gateway...')">Tip Reviewer 💰</button>
+                </div>
+
+                <div class="reviews-section">
+                    <h4>User Reviews & Critiques</h4>
+                    <div id="reviews-list">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <span class="reviewer-name">Rahul Sharma</span>
+                                <span class="stars">★★★★★</span>
+                            </div>
+                            <p>Mind-bending masterpiece! The background score by Hans Zimmer is outstanding.</p>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-header">
+                                <span class="reviewer-name">Amit Verma</span>
+                                <span class="stars">★★★★☆</span>
+                            </div>
+                            <p>Great concept. <span class="spoiler-text" onclick="revealSpoiler(this)">[SPOILER] The top keeps spinning at the end! Click to view.</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <aside class="review-form-container">
+            <h4>Write a Review</h4>
+            <form id="review-form">
+                <div class="form-group">
+                    <label for="username">Your Name</label>
+                    <input type="text" id="username" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="rating">Rating</label>
+                    <select id="rating" required>
+                        <option value="5">★★★★★ (5/5)</option>
+                        <option value="4">★★★★☆ (4/5)</option>
+                        <option value="3">★★★☆☆ (3/5)</option>
+                        <option value="2">★★☆☆☆ (2/5)</option>
+                        <option value="1">★☆☆☆☆ (1/5)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="user-comment">Your Review</label>
+                    <textarea id="user-comment" rows="5" placeholder="Share your thoughts about the movie..." required></textarea>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="is-spoiler">
+                    <label for="is-spoiler">Contains Spoilers ⚠️</label>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Review</button>
+            </form>
+        </aside>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
