@@ -1,0 +1,133 @@
+:root {
+  --bg-color: #0b0c10;
+  --card-bg: #1f2833;
+  --accent-color: #66fcf1;
+  --text-main: #ffffff;
+  --text-muted: #c5c6c7;
+  --star-color: #ffd700;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Navbar Utilities */
+.navbar {
+  background-color: #151a21;
+  padding: 15px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--card-bg);
+}
+
+.logo h1 { font-size: 22px; color: var(--accent-color); margin: 0; }
+nav .nav-link { color: var(--text-muted); margin-left: 20px; cursor: pointer; font-weight: 500; }
+nav .nav-link.active, nav .nav-link:hover { color: var(--accent-color); }
+.badge { background-color: var(--accent-color); color: #0b0c10; padding: 2px 6px; border-radius: 10px; font-size: 12px; }
+
+/* Hero Core */
+.hero-section {
+  padding: 40px 5%;
+  text-align: center;
+  background: linear-gradient(rgba(11, 12, 16, 0.85), #0b0c10), url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1000') center/cover;
+}
+
+.search-container { margin-top: 20px; display: flex; justify-content: center; gap: 12px; }
+.search-container input, .search-container select {
+  padding: 12px 20px; border-radius: 25px; background-color: var(--card-bg); border: 1px solid #2c3540; color: #fff; outline: none;
+}
+.search-container input { width: 350px; }
+
+/* Dashboard Responsive Systems */
+.container {
+  max-width: 1200px; margin: 20px auto; padding: 0 20px;
+  display: grid; grid-template-columns: 2.2fr 1fr; gap: 30px;
+}
+
+.sidebar-container { display: flex; flex-direction: column; gap: 20px; }
+
+@media (max-width: 768px) {
+  .container { grid-template-columns: 1fr; }
+  .search-container { flex-direction: column; }
+}
+
+/* Trailer Section Styles */
+.trailer-section { padding: 0 25px 20px 25px; }
+.trailer-section h4 { font-size: 16px; margin-bottom: 10px; color: var(--accent-color); }
+.mock-iframe-placeholder {
+  background-color: #151a21; border-radius: 8px; padding: 30px 15px; text-align: center; border: 1px dashed #2c3540;
+}
+
+/* Movie Cards Layouts */
+.movie-detail-card { background-color: var(--card-bg); border-radius: 12px; overflow: hidden; }
+.movie-header-block { display: flex; padding: 25px; gap: 25px; }
+.movie-poster { width: 130px; height: 195px; object-fit: cover; border-radius: 8px; }
+.movie-info h3 { font-size: 26px; margin: 0 0 10px 0; color: var(--accent-color); }
+.genre-tag { background-color: #2c3540; padding: 4px 12px; border-radius: 15px; font-size: 11px; }
+.movie-desc { color: var(--text-muted); margin-top: 15px; font-size: 14px; line-height: 1.5; }
+.scores-container { display: flex; gap: 15px; margin-top: 20px; }
+.score-box { background-color: #151a21; padding: 10px 20px; border-radius: 6px; text-align: center; }
+.score-box span { display: block; font-size: 11px; color: var(--text-muted); }
+.score-box strong { color: var(--accent-color); font-size: 16px; }
+
+/* Action Triggers Overlay */
+.actions-bar { background-color: #1a222d; padding: 15px 25px; display: flex; justify-content: space-between; }
+.btn { padding: 10px 20px; border-radius: 6px; border: none; font-weight: 600; cursor: pointer; }
+.btn-primary { background-color: var(--accent-color); color: #0b0c10; }
+.btn-danger { background-color: #ff4d4d; color: #fff; }
+.btn-secondary { background-color: transparent; border: 1px solid var(--text-muted); color: #fff; }
+
+/* Critique Nodes Content blocks */
+.reviews-section { padding: 25px; }
+.review-card { background-color: #151a21; padding: 15px; border-radius: 8px; margin-bottom: 12px; }
+.review-header { display: flex; justify-content: space-between; margin-bottom: 10px; align-items: center; }
+.reviewer-name { color: var(--accent-color); font-weight: bold; }
+.stars { color: var(--star-color); }
+.spoiler-masked {
+  background-color: #331f24; color: #ff6666; padding: 10px; border-radius: 6px; cursor: pointer; font-size: 12px; border: 1px dashed #ff4d4d;
+}
+
+/* Admin Panel Utility Control Custom CSS Button */
+.btn-admin-moderate {
+  background-color: rgba(255, 77, 77, 0.15); color: #ff4d4d; border: 1px solid #ff4d4d; padding: 2px 8px; border-radius: 4px; font-size: 11px; cursor: pointer; transition: 0.2s;
+}
+.btn-admin-moderate:hover { background-color: #ff4d4d; color: #fff; }
+
+/* Dynamic Trending Box Style */
+.trending-box { background-color: var(--card-bg); padding: 20px; border-radius: 12px; }
+.trending-box h4 { margin: 0 0 15px 0; color: var(--accent-color); font-size: 16px; }
+.trending-list { display: flex; flex-direction: column; gap: 10px; }
+.trending-item {
+  display: flex; align-items: center; gap: 15px; padding: 10px; background-color: #151a21; border-radius: 8px; cursor: pointer; transition: 0.2s; border: 1px solid transparent;
+}
+.trending-item:hover, .trending-item.active-trend { border-color: var(--accent-color); background-color: #1a222d; }
+.trend-rank { font-size: 18px; font-weight: bold; color: var(--accent-color); width: 25px; }
+.trend-details h5 { margin: 0; font-size: 14px; color: #fff; }
+.trend-details span { font-size: 11px; color: var(--text-muted); }
+
+/* Sidebar Layout Inputs */
+.sidebar-form { background-color: var(--card-bg); padding: 25px; border-radius: 12px; }
+.sidebar-form h4 { margin: 0 0 15px 0; color: var(--accent-color); }
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; font-size: 13px; margin-bottom: 5px; color: var(--text-muted); }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 10px; background-color: #151a21; border: 1px solid #2c3540; color: #fff; border-radius: 6px; box-sizing: border-box; outline: none;
+}
+.checkbox-group { display: flex; align-items: center; gap: 8px; }
+.checkbox-group input { width: auto; }
+.full-width { width: 100%; }
+.no-results { text-align: center; color: var(--text-muted); padding: 50px; background: var(--card-bg); border-radius: 12px; }
+
+/* Structural Stripe Portal System Modals Layouts */
+.modal-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.75); display: flex; justify-content: center; align-items: center; z-index: 1000;
+}
+.modal-surface {
+  background-color: var(--card-bg); padding: 30px; border-radius: 12px; max-width: 450px; width: 90%; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 1px solid #2c3540;
+}
+.modal-surface h4 { margin: 0 0 10px 0; color: var(--accent-color); font-size: 18px; }
+.modal-surface p { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
